@@ -7,7 +7,7 @@ const configdb = {
   useFindAndModify: false,
 };
 
-const uri = `mongodb+srv://${USERDB}:${PASSWORD}@${MONGODBHOST}/${DBNAME}?retryWrites=true&w=majority`;
+const uri = `mongodb+srv://${USERDB}:${PASSWORD}@${MONGODBHOST}/?retryWrites=true&w=majority`;
 
 try {
   mongoose.connect(uri, configdb);

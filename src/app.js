@@ -25,8 +25,10 @@ app.use(
 ); //extended es para verificar que envian texto chiqquito (cambiar cuando se reciba el PDF)
 
 //rutas por entidad
+const testroute = require("./routes/test.routes");
 
 //routes - servicios
+app.use("/api/test/", testroute);
 
 //init
 app.listen(app.get("port"), () => {

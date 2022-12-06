@@ -1,5 +1,5 @@
-const Rol = require("../entidad/user/model/Rol");
-const Currency = require("../entidad/currency/model/Currency");
+const Rol = require("../entities/user/model/Role");
+const Currency = require("../entities/currency/model/Currency");
 module.exports = {
   createRol: async function () {
     try {
