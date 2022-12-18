@@ -1,9 +1,9 @@
-const Card = require("../model/Concept");
+const Card = require("../model/Card");
 module.exports = {
-  add: async function (concept) {
+  add: async function (card) {
     try {
-      const newCard = new Concept(concept);
-      const saved = await newCard.save(concept);
+      const newCard = new Card(card);
+      const saved = await newCard.save(card);
       return saved;
     } catch (err) {
       console.log(err);
