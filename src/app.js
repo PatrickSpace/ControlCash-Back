@@ -3,7 +3,6 @@ const express = require("express");
 require("./db.js");
 const morgan = require("morgan");
 const cors = require("cors");
-
 //basic config
 const basicconfig = require("./libs/basicConfig");
 
@@ -11,7 +10,6 @@ const basicconfig = require("./libs/basicConfig");
 const app = express();
 
 //settings
-basicconfig.createRol();
 app.set("port", process.env.PORT || 3000);
 app.use(express.json());
 
@@ -26,11 +24,17 @@ app.use(
 
 //rutas por entidad
 const cardroutes = require("./routes/card.routes");
-
+const currencyroutes = require("./routes/currency.routes");
+const conceptroutes = require("./routes/concept.routes");
 //routes - servicios
 app.use("/api/card/", cardroutes);
-
+app.use("/api/currency/", currencyroutes);
+app.use("/api/concept/", conceptroutes);
 //init
 app.listen(app.get("port"), () => {
   console.log(`API running at http://localhost:${app.get("port")}`);
 });
+
+//agregar valores por defecto
+basicconfig.createRol();
+basicconfig.createDefaultCurrency();

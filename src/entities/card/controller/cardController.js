@@ -1,7 +1,6 @@
 const addCard = require("../usecase/addCard");
 const findCard = require("../usecase/findCard");
 const deleteCard = require("../usecase/deleteCard");
-const Card = require("../model/Card");
 
 module.exports = {
   agregar: async function (req, res) {
